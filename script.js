@@ -14,7 +14,6 @@ function getComputerChoice() {
     }
 }
 
-
 function playRound(playerSelection, computerSelection) {
     let lowerCasePlayerSelection = playerSelection.toLowerCase();
 
@@ -32,6 +31,16 @@ function playRound(playerSelection, computerSelection) {
         return "You lose! " + computerSelection + " beats " + lowerCasePlayerSelection.replace(lowerCasePlayerSelection.charAt(0), lowerCasePlayerSelection.charAt(0).toUpperCase());
     }
 }
-let cp = getComputerChoice();
-console.log(cp);
-console.log(playRound("Paper", cp));
+
+
+function game() {
+    for (let i = 0; i < 5; ++i) {
+        
+        let playerChoice = prompt("Rock, Paper, Scissors Go:");
+        let winner = playRound(playerChoice, getComputerChoice());
+
+        console.log(winner);
+    }
+}
+
+game();
